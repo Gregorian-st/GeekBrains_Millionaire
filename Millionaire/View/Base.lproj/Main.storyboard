@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Initial View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="Millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3s-66-yY9" userLabel="RecordsButton">
+                                <rect key="frame" x="154" y="790" width="82" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <state key="normal" title="Результаты"/>
+                                <connections>
+                                    <segue destination="m3c-CL-of4" kind="show" id="qHD-ye-OWn"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="center" axis="vertical" alignment="center" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="YRe-DY-j85">
+                                <rect key="frame" x="70" y="222" width="250" height="350"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="millionaire" translatesAutoresizingMaskIntoConstraints="NO" id="Jln-2E-nq1" userLabel="LogoImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="5Jk-DO-t7u"/>
+                                            <constraint firstAttribute="height" constant="250" id="cpS-Xa-Dfi"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nz-nB-7xL" userLabel="StartButton" customClass="RoundedButton" customModule="Millionaire" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="302" width="130" height="48"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <inset key="contentEdgeInsets" minX="20" minY="6" maxX="20" maxY="6"/>
+                                        <state key="normal" title="Играть"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" systemColor="tertiaryLabelColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" systemColor="placeholderTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="hgb-Qp-B0h" kind="show" identifier="newGameSegue" id="kq1-bZ-yKk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="NFX-J0-iLM">
+                                        <variation key="heightClass=compact" constant="305"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="250" id="XWj-Zn-sBI"/>
+                                </constraints>
+                                <variation key="heightClass=compact" spacing="10"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p3s-66-yY9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3v8-lG-2ql"/>
+                            <constraint firstItem="YRe-DY-j85" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Swi-Cu-ocI"/>
+                            <constraint firstItem="p3s-66-yY9" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="-24" id="Xqk-Rk-bIp"/>
+                            <constraint firstItem="YRe-DY-j85" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-25" id="g9j-hQ-aTc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-33.846153846153847" y="103.7914691943128"/>
+        </scene>
+        <!--Record View Controller-->
+        <scene sceneID="LrT-ZS-ayF">
+            <objects>
+                <viewController id="m3c-CL-of4" customClass="RecordViewController" customModule="Millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t7L-gC-ac8">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ТАБЛИЦА РЕЗУЛЬТАТОВ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gn-Sh-2kt" userLabel="CaptionLabel">
+                                <rect key="frame" x="97.000000000000014" y="20" width="196.33333333333337" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wPn-07-JNJ">
+                                <rect key="frame" x="10" y="50.333333333333314" width="370" height="635.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecordCell" id="S46-7D-qiv" customClass="RecordTableViewCell" customModule="Millionaire" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="370" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S46-7D-qiv" id="BDF-6j-0ZZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EarnLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8R8-2C-wyE" userLabel="EarnLabel">
+                                                    <rect key="frame" x="10" y="11.666666666666666" width="81.333333333333329" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhS-I9-uvN">
+                                                    <rect key="frame" x="282.66666666666669" y="11.666666666666666" width="77.333333333333314" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8R8-2C-wyE" firstAttribute="centerY" secondItem="BDF-6j-0ZZ" secondAttribute="centerY" id="5ho-YY-M0n"/>
+                                                <constraint firstItem="WhS-I9-uvN" firstAttribute="centerY" secondItem="BDF-6j-0ZZ" secondAttribute="centerY" id="9UW-G4-9Wr"/>
+                                                <constraint firstItem="8R8-2C-wyE" firstAttribute="leading" secondItem="BDF-6j-0ZZ" secondAttribute="leading" constant="10" id="cFp-D4-B7g"/>
+                                                <constraint firstItem="WhS-I9-uvN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8R8-2C-wyE" secondAttribute="trailing" constant="8" symbolic="YES" id="owS-ri-L2A"/>
+                                                <constraint firstAttribute="trailing" secondItem="WhS-I9-uvN" secondAttribute="trailing" constant="10" id="wao-Lx-dpj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="WhS-I9-uvN" id="Xo4-HT-xBB"/>
+                                            <outlet property="earnLabel" destination="8R8-2C-wyE" id="ADS-XY-Ohc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="m3c-CL-of4" id="vUL-9y-Wg6"/>
+                                    <outlet property="delegate" destination="m3c-CL-of4" id="iOe-FZ-QTp"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-np-55j" userLabel="ClearRecordsButton">
+                                <rect key="frame" x="118.66666666666669" y="706" width="153" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <state key="normal" title="Очистить результаты"/>
+                                <connections>
+                                    <action selector="cleanRecordsDidTapped:" destination="m3c-CL-of4" eventType="touchUpInside" id="4qv-6n-zop"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yKQ-iH-WAo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GRO-np-55j" firstAttribute="centerX" secondItem="t7L-gC-ac8" secondAttribute="centerX" id="1EP-Xj-Oqa"/>
+                            <constraint firstItem="yKQ-iH-WAo" firstAttribute="bottom" secondItem="GRO-np-55j" secondAttribute="bottom" constant="20" id="4xt-d4-wFB"/>
+                            <constraint firstItem="6Gn-Sh-2kt" firstAttribute="top" secondItem="yKQ-iH-WAo" secondAttribute="top" constant="20" id="GLt-Tr-5cU"/>
+                            <constraint firstItem="6Gn-Sh-2kt" firstAttribute="centerX" secondItem="t7L-gC-ac8" secondAttribute="centerX" id="djL-Ib-fpD"/>
+                            <constraint firstItem="wPn-07-JNJ" firstAttribute="top" secondItem="6Gn-Sh-2kt" secondAttribute="bottom" constant="10" id="flb-od-rre"/>
+                            <constraint firstItem="wPn-07-JNJ" firstAttribute="leading" secondItem="yKQ-iH-WAo" secondAttribute="leading" constant="10" id="hp3-9V-qGV"/>
+                            <constraint firstItem="wPn-07-JNJ" firstAttribute="bottom" secondItem="GRO-np-55j" secondAttribute="top" constant="-20" id="j2V-yB-ZFp"/>
+                            <constraint firstItem="yKQ-iH-WAo" firstAttribute="trailing" secondItem="wPn-07-JNJ" secondAttribute="trailing" constant="10" id="oQu-Rd-JCo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Z4Q-3i-mnC"/>
+                    <connections>
+                        <outlet property="tableView" destination="wPn-07-JNJ" id="6qa-qL-pDm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hnk-3K-5Vf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1011" y="839"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="Y4C-Cv-qvS">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="hgb-Qp-B0h" customClass="GameViewController" customModule="Millionaire" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TAQ-6e-gEa">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос №" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLA-PF-2DJ" userLabel="QuestionLabel">
+                                <rect key="frame" x="143" y="64" width="104" height="26.333333333333329"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заработано 0₽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sy-BO-HFL" userLabel="LastSumLabel">
+                                <rect key="frame" x="135.66666666666666" y="95.333333333333329" width="119" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgy-tm-fi0" userLabel="QuestionTextView">
+                                <rect key="frame" x="20" y="140.66666666666666" width="350" height="223.99999999999997"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SLQ-dd-ie6">
+                                <rect key="frame" x="20" y="379.66666666666669" width="350" height="165.00000000000006"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PCL-EV-Hdv" userLabel="StackView1">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoV-aD-Rsg" userLabel="Label1">
+                                                <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="30"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfn-io-doU" userLabel="QuestionButton1" customClass="RoundedButton" customModule="Millionaire" customModuleProvider="target">
+                                                <rect key="frame" x="29.666666666666657" y="0.0" width="320.33333333333337" height="30"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <state key="normal" title="Text 1">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" systemColor="systemPurpleColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.77833408117294312" green="0.51874387264251709" blue="0.91469937562942505" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buttonAnswerDidTapped:" destination="hgb-Qp-B0h" eventType="touchUpInside" id="cBb-18-0Fr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GgQ-JX-Go1" userLabel="StackView2">
+                                        <rect key="frame" x="0.0" y="45" width="350" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APk-6o-zi7" userLabel="Label2">
+                                                <rect key="frame" x="0.0" y="0.0" width="19" height="30"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0l5-0c-Qon" userLabel="QuestionButton2" customClass="RoundedButton" customModule="Millionaire" customModuleProvider="target">
+                                                <rect key="frame" x="29" y="0.0" width="321" height="30"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <state key="normal" title="Text 2">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" systemColor="systemPurpleColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.77833408117294312" green="0.51874387264251709" blue="0.91469937562942505" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buttonAnswerDidTapped:" destination="hgb-Qp-B0h" eventType="touchUpInside" id="PJz-wN-5fW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YBy-bG-X4b" userLabel="StackView3">
+                                        <rect key="frame" x="0.0" y="90" width="350" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEM-21-sWb" userLabel="Label3">
+                                                <rect key="frame" x="0.0" y="0.0" width="20.666666666666668" height="30"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="2" contentMode="scaleAspectFit" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfA-vF-or7" userLabel="QuestionButton3" customClass="RoundedButton" customModule="Millionaire" customModuleProvider="target">
+                                                <rect key="frame" x="30.666666666666657" y="0.0" width="319.33333333333337" height="30"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <state key="normal" title="Text 3">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" systemColor="systemPurpleColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.77833408117294312" green="0.51874387264251709" blue="0.91469937562942505" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buttonAnswerDidTapped:" destination="hgb-Qp-B0h" eventType="touchUpInside" id="fLW-AJ-vvr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dAa-0Z-zWS" userLabel="StackView4">
+                                        <rect key="frame" x="0.0" y="134.99999999999994" width="350" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHI-qp-g6w" userLabel="Label4">
+                                                <rect key="frame" x="0.0" y="0.0" width="20.666666666666668" height="30"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5F-Qr-Mbq" userLabel="QuestionButton4" customClass="RoundedButton" customModule="Millionaire" customModuleProvider="target">
+                                                <rect key="frame" x="30.666666666666657" y="0.0" width="319.33333333333337" height="30"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <state key="normal" title="Text 4">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" systemColor="systemPurpleColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.77833408117294312" green="0.51874387264251709" blue="0.91469937562942505" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buttonAnswerDidTapped:" destination="hgb-Qp-B0h" eventType="touchUpInside" id="k8k-MQ-dMC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=compact" spacing="5"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="250" placeholderIntrinsicHeight="31" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yz5-5w-ttS" userLabel="FinishButton" customClass="RoundedButton" customModule="Millionaire" customModuleProvider="target">
+                                <rect key="frame" x="70" y="584.66666666666663" width="250" height="31"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="6" maxX="15" maxY="6"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="ЗАБРАТЬ ДЕНЬГИ И ВЫЙТИ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemRedColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.92158371210098267" green="0.34578174352645874" blue="0.22709307074546814" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonFinishDidTapped:" destination="hgb-Qp-B0h" eventType="touchUpInside" id="CjN-xH-dWJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5Fy-yS-ztu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Yz5-5w-ttS" firstAttribute="top" secondItem="SLQ-dd-ie6" secondAttribute="bottom" constant="40" id="0EG-Oh-zhA">
+                                <variation key="heightClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="Yz5-5w-ttS" firstAttribute="centerX" secondItem="TAQ-6e-gEa" secondAttribute="centerX" id="3q9-Sn-8cH"/>
+                            <constraint firstItem="hgy-tm-fi0" firstAttribute="top" secondItem="7Sy-BO-HFL" secondAttribute="bottom" constant="25" id="LvJ-6A-Ygo"/>
+                            <constraint firstItem="hgy-tm-fi0" firstAttribute="leading" secondItem="5Fy-yS-ztu" secondAttribute="leading" constant="20" id="PY4-Cp-L00"/>
+                            <constraint firstItem="5Fy-yS-ztu" firstAttribute="trailing" secondItem="SLQ-dd-ie6" secondAttribute="trailing" constant="20" id="PZf-os-uIo"/>
+                            <constraint firstItem="sLA-PF-2DJ" firstAttribute="centerX" secondItem="TAQ-6e-gEa" secondAttribute="centerX" id="RPn-6j-gKT"/>
+                            <constraint firstItem="7Sy-BO-HFL" firstAttribute="centerX" secondItem="TAQ-6e-gEa" secondAttribute="centerX" id="b5S-oV-4L5"/>
+                            <constraint firstItem="hgy-tm-fi0" firstAttribute="bottom" secondItem="SLQ-dd-ie6" secondAttribute="top" constant="-15" id="cOy-wr-A3C"/>
+                            <constraint firstItem="7Sy-BO-HFL" firstAttribute="top" secondItem="sLA-PF-2DJ" secondAttribute="bottom" constant="5" id="nYE-qT-KRR"/>
+                            <constraint firstItem="sLA-PF-2DJ" firstAttribute="top" secondItem="5Fy-yS-ztu" secondAttribute="top" constant="20" id="wRt-AF-M3b"/>
+                            <constraint firstItem="SLQ-dd-ie6" firstAttribute="leading" secondItem="5Fy-yS-ztu" secondAttribute="leading" constant="20" id="xID-bW-8UU"/>
+                            <constraint firstItem="5Fy-yS-ztu" firstAttribute="trailing" secondItem="hgy-tm-fi0" secondAttribute="trailing" constant="20" id="ySP-a1-QhJ"/>
+                            <constraint firstItem="SLQ-dd-ie6" firstAttribute="centerY" secondItem="TAQ-6e-gEa" secondAttribute="centerY" constant="40" id="yto-Ri-zZe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="078-a3-KsI"/>
+                    <connections>
+                        <outlet property="finishButton" destination="Yz5-5w-ttS" id="Mes-j8-oqb"/>
+                        <outlet property="lastSumLabel" destination="7Sy-BO-HFL" id="miP-hx-2P4"/>
+                        <outlet property="questionLabel" destination="sLA-PF-2DJ" id="L0m-qK-Sso"/>
+                        <outlet property="questionTextView" destination="hgy-tm-fi0" id="aFQ-hC-aHL"/>
+                        <outletCollection property="answerButtons" destination="xfn-io-doU" collectionClass="NSMutableArray" id="zE7-o8-UzE"/>
+                        <outletCollection property="answerButtons" destination="0l5-0c-Qon" collectionClass="NSMutableArray" id="3kO-fp-tRX"/>
+                        <outletCollection property="answerButtons" destination="NfA-vF-or7" collectionClass="NSMutableArray" id="4nt-YO-oYo"/>
+                        <outletCollection property="answerButtons" destination="v5F-Qr-Mbq" collectionClass="NSMutableArray" id="pM5-vQ-ssk"/>
+                        <outletCollection property="answerLabels" destination="AoV-aD-Rsg" collectionClass="NSMutableArray" id="f7M-bs-SGK"/>
+                        <outletCollection property="answerLabels" destination="APk-6o-zi7" collectionClass="NSMutableArray" id="PwS-q7-giQ"/>
+                        <outletCollection property="answerLabels" destination="OEM-21-sWb" collectionClass="NSMutableArray" id="giL-Gb-czF"/>
+                        <outletCollection property="answerLabels" destination="SHI-qp-g6w" collectionClass="NSMutableArray" id="8ak-xa-oa3"/>
+                        <segue destination="hN4-8a-CpE" kind="unwind" identifier="unwindFromGame" unwindAction="unwindFromGame:" id="ITf-7Q-PRG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W0a-5C-zmh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="hN4-8a-CpE" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1010.7692307692307" y="103.7914691943128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="millionaire" width="188" height="188"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
